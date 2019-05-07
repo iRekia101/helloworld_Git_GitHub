@@ -1,0 +1,5 @@
+Este é um novo ficheiro criado no meu Projeto
+
+Vou lhe chamar Ficheiro 1.
+
+Imagihnem que estou a usar uma Implementacao

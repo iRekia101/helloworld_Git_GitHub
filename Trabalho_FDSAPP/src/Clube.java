@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Clube {
 	
@@ -12,7 +14,7 @@ public class Clube {
 	      private int contacto;
 	      private String email;
 	      private String morada;
-	      private String equipas;
+	      private List <Equipa> equipas = new ArrayList <Equipa>();
 
 
 	    // =======================================================
@@ -61,12 +63,16 @@ public class Clube {
 		public void setMorada(String morada) {
 			this.morada = morada;
 		}
-		public String getEquipas() {
+		public List<Equipa> getEquipas() {
 			return equipas;
-		}
-		public void setEquipas(String equipas) {
+			}
+		public void setEquipas(List<Equipa> equipas) {
 			this.equipas = equipas;
+			}
+		public void addEquipa(Equipa equipa) {
+			this.equipas.add(equipa);
 		}
+			
 
 	    // =======================================================
 	    // =================== CONSTRUTORES =====================
@@ -74,8 +80,9 @@ public class Clube {
 
 	  
 	   
-	    // CONSTRUTOR DEFAULT
-
+	      public Clube () {
+    	   
+            }
 	   
 
 	    // CONSTRUTOR COM PARÂMETROS
@@ -90,13 +97,13 @@ public class Clube {
 			this.contacto = contacto;
 			this.email = email;
 			this.morada = morada;
-			this.equipas = equipas;
+			
 		}
 		
 	    // =======================================================
 	    // =================== .COMPORTAMENTOS ==================
 	    // =======================================================
-
+        
 
 
 

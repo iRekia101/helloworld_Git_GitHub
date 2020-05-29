@@ -5,9 +5,9 @@ import java.util.Date;
 	    // ===================== ATRIBUTOS =======================
 	    // =======================================================
 	      private String equipaVisitante;
-	      private String golosEquipaVisitante;
+	      private int golosEquipaVisitante;
 	      private String equipaVisitada;
-	      private String golosEquipaVisitada;
+	      private int golosEquipaVisitada;
 	      private Date data;
 	      private int jornada;
 	      
@@ -26,10 +26,10 @@ import java.util.Date;
 		public void setEquipaVisitante(String equipaVisitante) {
 	  		this.equipaVisitante = equipaVisitante;
 	  	}
-	  	public String getGolosEquipaVisitante() {
+	  	public int getGolosEquipaVisitante() {
 	  		return golosEquipaVisitante;
 	  	}
-	  	public void setGolosEquipaVisitante(String golosEquipaVisitante) {
+	  	public void setGolosEquipaVisitante(int golosEquipaVisitante) {
 	  		this.golosEquipaVisitante = golosEquipaVisitante;
 	  	}
 	  	public String getEquipaVisitada() {
@@ -38,10 +38,10 @@ import java.util.Date;
 	  	public void setEquipaVisitada(String equipaVisitada) {
 	  		this.equipaVisitada = equipaVisitada;
 	  	}
-	  	public String getGolosEquipaVisitada() {
+	  	public int getGolosEquipaVisitada() {
 	  		return golosEquipaVisitada;
 	  	}
-	  	public void setGolosEquipaVisitada(String golosEquipaVisitada) {
+	  	public void setGolosEquipaVisitada(int golosEquipaVisitada) {
 	  		this.golosEquipaVisitada = golosEquipaVisitada;
 	  	}
 	  	public Date getData() {
@@ -66,10 +66,12 @@ import java.util.Date;
 	   
 	    // CONSTRUTOR DEFAULT
 
-	   
+	   public Jogo () {
+		   
+	   }
 
 	    // CONSTRUTOR COM PARÂMETROS
-	 	public Jogo(String equipaVisitante, String golosEquipaVisitante, String equipaVisitada, String golosEquipaVisitada,
+	 	public Jogo(String equipaVisitante, int golosEquipaVisitante, String equipaVisitada, int golosEquipaVisitada,
 				Date data, int jornada) {
 			super();
 			this.equipaVisitante = equipaVisitante;

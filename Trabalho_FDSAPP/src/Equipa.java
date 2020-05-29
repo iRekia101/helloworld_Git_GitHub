@@ -3,7 +3,7 @@
 	    // =======================================================
 	    // ===================== ATRIBUTOS =======================
 	    // =======================================================
-	      private String codigoEquipa;
+	      private int codigoEquipa;
 	      private String nomeEquipa;
 	      private String jogadores;
 	      private String treinadores;
@@ -14,10 +14,10 @@
 	    // ============ ACESSORES e MODIFICADORES ===============
 	    // =======================================================
 
-	  	public String getCodigoEquipa() {
+	  	public int getCodigoEquipa() {
 	  		return codigoEquipa;
 	  	}
-	  	public void setCodigoEquipa(String codigoEquipa) {
+	  	public void setCodigoEquipa(int codigoEquipa) {
 	  		this.codigoEquipa = codigoEquipa;
 	  	}
 	  	public String getNomeEquipa() {
@@ -57,7 +57,7 @@
 
 	    // CONSTRUTOR COM PARÂMETROS
 
-		public Equipa(String codigoEquipa, String nomeEquipa, String jogadores, String treinadores, String escalao) {
+		public Equipa(int codigoEquipa, String nomeEquipa, String jogadores, String treinadores, String escalao) {
 			super();
 			this.codigoEquipa = codigoEquipa;
 			this.nomeEquipa = nomeEquipa;

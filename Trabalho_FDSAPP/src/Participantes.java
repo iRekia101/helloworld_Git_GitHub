@@ -1,4 +1,5 @@
-import java.util.Date;
+import java.time.LocalDate;
+
 
 public abstract class Participantes {
     // =======================================================
@@ -6,7 +7,7 @@ public abstract class Participantes {
     // =======================================================
 	    private int id;
 	    private String nome;
-	    private Date dataNascimento;
+	    private LocalDate dataNascimento;
 	    private int contacto;
 	    private String email;
 
@@ -26,10 +27,10 @@ public abstract class Participantes {
 		public void setNome(String nome) {
 			this.nome = nome;
 		}
-		public Date getDataNascimento() {
+		public LocalDate getDataNascimento() {
 			return dataNascimento;
 		}
-		public void setDataNascimento(Date dataNascimento) {
+		public void setDataNascimento(LocalDate dataNascimento) {
 			this.dataNascimento = dataNascimento;
 		}
 		public int getContacto() {
@@ -44,8 +45,7 @@ public abstract class Participantes {
 		public void setEmail(String email) {
 			this.email = email;
 		}
-
-
+	
 
     // =======================================================
     // =================== CONSTRUTORES =====================
@@ -73,6 +73,12 @@ public abstract class Participantes {
     // =======================================================
 
     // ----> toString()
+		@Override
+		public String toString() {
+			return "Participantes [id=" + id + ", nome=" + nome + ", dataNascimento=" + dataNascimento + ", contacto="
+					+ contacto + ", email=" + email + "]";
+		}
+
 
 
 

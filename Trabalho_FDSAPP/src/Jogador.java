@@ -34,7 +34,9 @@
 	  
 	   
 	    // CONSTRUTOR DEFAULT
-
+           public Jogador () {
+        	   
+           }
 	   
 
 	    // CONSTRUTOR COM PARÂMETROS

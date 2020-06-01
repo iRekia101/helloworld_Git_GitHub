@@ -1,5 +1,5 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Clube {
@@ -9,7 +9,7 @@ public class Clube {
 	    // =======================================================
 	      private int codigo;
 	      private String nome;
-	      private Date dataFundacao;
+	      private LocalDate dataFundacao;
 	      private String corEquipamento;
 	      private int contacto;
 	      private String email;
@@ -33,10 +33,10 @@ public class Clube {
 		public void setNome(String nome) {
 			this.nome = nome;
 		}
-		public Date getDataFundacao() {
+		public LocalDate getDataFundacao() {
 			return dataFundacao;
 		}
-		public void setDataFundacao(Date dataFundacao) {
+		public void setDataFundacao(LocalDate dataFundacao) {
 			this.dataFundacao = dataFundacao;
 		}
 		public String getCorEquipamento() {
@@ -87,7 +87,7 @@ public class Clube {
 
 	    // CONSTRUTOR COM PARÂMETROS
 		
-		public Clube(int codigo, String nome, Date dataFundacao, String corEquipamento, int contacto, String email,
+		public Clube(int codigo, String nome, LocalDate dataFundacao, String corEquipamento, int contacto, String email,
 				String morada, String equipas) {
 			super();
 			this.codigo = codigo;
@@ -104,7 +104,19 @@ public class Clube {
 	    // =================== .COMPORTAMENTOS ==================
 	    // =======================================================
         
-
+           public void EliminarEquipa(int codigo) {
+        	   
+        	 for (int i = 0; i < equipas.size(); i++) {
+             	if(codigo == this.equipas.get(i).getCodigoEquipa()) {
+             		equipas.remove(i);
+             		System.out.println("equipa removida");
+             		}
+             		
+             	 }
+      
+           }
+           
+           
 
 
 	    // =======================================================

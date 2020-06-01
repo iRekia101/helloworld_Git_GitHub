@@ -1,5 +1,6 @@
-import java.util.Date;
+
 import java.util.List;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 	public class Competicao {
@@ -8,8 +9,8 @@ import java.util.ArrayList;
 	    // =======================================================
 	       private int codigo;
 	       private String nome;
-	       private Date dataInicio;
-	       private Date dataFim;
+	       private LocalDate dataInicio;
+	       private LocalDate dataFim;
 	       private List <Equipa> equipas = new ArrayList <Equipa>();
 	       private List <Jogo> jogos = new ArrayList <Jogo> ();
 	       private String escalao;
@@ -34,16 +35,16 @@ import java.util.ArrayList;
 		public void setNome(String nome) {
 			this.nome = nome;
 		}
-		public Date getDataInicio() {
+		public LocalDate getDataInicio() {
 			return dataInicio;
 		}
-		public void setDataInicio(Date dataInicio) {
+		public void setDataInicio(LocalDate dataInicio) {
 			this.dataInicio = dataInicio;
 		}
-		public Date getDataFim() {
+		public LocalDate getDataFim() {
 			return dataFim;
 		}
-		public void setDataFim(Date dataFim) {
+		public void setDataFim(LocalDate dataFim) {
 			this.dataFim = dataFim;
 		}
 		
@@ -97,7 +98,7 @@ import java.util.ArrayList;
 
 	    // CONSTRUTOR COM PARÂMETROS
 		
-		public Competicao(int codigo, String nome, Date dataInicio, Date dataFim,
+		public Competicao(int codigo, String nome, LocalDate dataInicio, LocalDate dataFim,
 				String jogos, String escalao) {
 			super();
 			this.codigo = codigo;
@@ -124,17 +125,44 @@ import java.util.ArrayList;
         	 
          }
          
-         public void AlterarEquipa(int codigo) {
+         public void AlterarEquipa(int codigo, Equipa equipa) {
         	 for (int i = 0; i < equipas.size(); i++) {
-        		if(codigo == this.equipas.get(i).getCodigoEquipa()) {
-        			equipas.remove(i);
-        			System.out.println("equipa alterada");
+                   eliminarEquipa(codigo);
+                   addEquipa(equipa);
+             
+              }
+         }	 
+         
+         public void eliminarJogo(int codigo) {
+        	 
+        	 for (int i = 0; i < jogos.size(); i++) {
+        		if(codigo == this.jogos.get(i).getJornada()) {
+        			jogos.remove(i);
+        			System.out.println("jogo removido");
         		}
         		
         	 }
  
         	 
          }
+         
+         public void mostrarequipas() {
+             System.out.println("Equipas:");
+              for (int i = 0; i < equipas.size(); i++) {
+                  System.out.printf("Codigo : "+ equipas.get(i).getCodigoEquipa() + " Nome : "+ equipas.get(i).getNomeEquipa() + " Escalão : "+ equipas.get(i).getEscalao() + "\n");
+               } 
+          }
+         
+         public void mostarJornada(int jornada) {
+             System.out.println("Jogos da Jornada "+jornada);
+             for (int i = 0; i < jogos.size(); i++) {
+                if(jornada == this.jogos.get(i).getJornada()) {
+                    System.out.println("Data"+ jogos.get(i).getData()+"    "+jogos.get(i).getEquipaVisitada()+ "   " + jogos.get(i).getGolosEquipaVisitada() + ":" +  jogos.get(i).getGolosEquipaVisitante()  + "   " + jogos.get(i).getEquipaVisitante());
+                }
+             } 
+         }
+        
+         
          
 
 	    // =======================================================

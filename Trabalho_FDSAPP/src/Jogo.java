@@ -1,4 +1,6 @@
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 	public class Jogo {
 	    // =======================================================
@@ -8,8 +10,9 @@ import java.util.Date;
 	      private int golosEquipaVisitante;
 	      private String equipaVisitada;
 	      private int golosEquipaVisitada;
-	      private Date data;
+	      private LocalDate data;
 	      private int jornada;
+	      private List <Arbitro> arbitros = new ArrayList <Arbitro>();
 	      
 	      
 
@@ -19,7 +22,8 @@ import java.util.Date;
 	    // =======================================================
 	      
 
-	  	public String getEquipaVisitante() {
+	 
+		public String getEquipaVisitante() {
 	  		return equipaVisitante;
 	  	}
 	 
@@ -44,10 +48,10 @@ import java.util.Date;
 	  	public void setGolosEquipaVisitada(int golosEquipaVisitada) {
 	  		this.golosEquipaVisitada = golosEquipaVisitada;
 	  	}
-	  	public Date getData() {
+	  	public LocalDate getData() {
 	  		return data;
 	  	}
-	  	public void setData(Date data) {
+	  	public void setData(LocalDate data) {
 	  		this.data = data;
 	  	}
 	  	public int getJornada() {
@@ -56,6 +60,17 @@ import java.util.Date;
 	  	public void setJornada(int jornada) {
 	  		this.jornada = jornada;
 	  	}
+	 	public List<Arbitro> getArbitros() {
+			return arbitros;
+		}
+
+		public void setArbitros(List<Arbitro> arbitros) {
+			this.arbitros = arbitros;
+		}
+		
+	    public void addArbitro (Arbitro Arbitro) {
+	    	this.arbitros.add(Arbitro);
+	    }
 
 
 	    // =======================================================
@@ -72,7 +87,7 @@ import java.util.Date;
 
 	    // CONSTRUTOR COM PARÂMETROS
 	 	public Jogo(String equipaVisitante, int golosEquipaVisitante, String equipaVisitada, int golosEquipaVisitada,
-				Date data, int jornada) {
+				LocalDate data, int jornada) {
 			super();
 			this.equipaVisitante = equipaVisitante;
 			this.golosEquipaVisitante = golosEquipaVisitante;
@@ -81,6 +96,8 @@ import java.util.Date;
 			this.data = data;
 			this.jornada = jornada;
 		}
+
+	
 
 
 	    // =======================================================
@@ -96,13 +113,12 @@ import java.util.Date;
 
 	    // ----> toString()
 	     
-	 	@Override
+		@Override
 		public String toString() {
-			return "Jogos [equipaVisitante=" + equipaVisitante + ", golosEquipaVisitante=" + golosEquipaVisitante
+			return "Jogo [equipaVisitante=" + equipaVisitante + ", golosEquipaVisitante=" + golosEquipaVisitante
 					+ ", equipaVisitada=" + equipaVisitada + ", golosEquipaVisitada=" + golosEquipaVisitada + ", data="
-					+ data + ", jornada=" + jornada + "]";
+					+ data + ", jornada=" + jornada + ", arbitros=" + arbitros + "]";
 		}
-
 	    // ----> equals()
 	}
 

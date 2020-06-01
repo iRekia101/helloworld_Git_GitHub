@@ -1,6 +1,8 @@
 
 	public class Equipa {
-	    // =======================================================
+	  
+
+		// =======================================================
 	    // ===================== ATRIBUTOS =======================
 	    // =======================================================
 	      private int codigoEquipa;
@@ -83,7 +85,11 @@
 
 	    // ----> toString()
 
-
+		  @Override
+			public String toString() {
+				return "Equipa [codigoEquipa=" + codigoEquipa + ", nomeEquipa=" + nomeEquipa + ", jogadores=" + jogadores
+						+ ", treinadores=" + treinadores + ", escalao=" + escalao + "]";
+			}
 
 	    // ----> equals()
 	}

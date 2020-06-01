@@ -111,11 +111,28 @@ public class Clube {
              		equipas.remove(i);
              		System.out.println("equipa removida");
              		}
-             		
              	 }
-      
            }
-           
+           public void AlterarEquipa(int codigo, Equipa equipa) {
+          	 for (int i = 0; i < equipas.size(); i++) {
+                     EliminarEquipa(codigo);
+                     addEquipa(equipa);
+                }
+           }
+           public void CountJogadores() {
+        	int counter = 0;
+            for (int i = 0; i < equipas.size(); i++) {
+            	counter+=equipas.get(i).getJogadores().size();
+            }
+            System.out.println(counter +" Jogadores do Clube");
+          }
+           public void CountTreinadores() {
+        	int counter = 0;
+            for (int i = 0; i < equipas.size(); i++) {
+            	counter+=equipas.get(i).getTreinadores().size();
+            }
+            System.out.println(counter +" Jogadores do Clube");
+          }
            
 
 

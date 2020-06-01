@@ -57,7 +57,11 @@ import java.util.ArrayList;
 		}
 		
 		public void addEquipa(Equipa equipa) {
+		//	if (validarEscalao(equipa)==true) {
 			this.equipas.add(equipa);
+		//	}else {
+			//	System.out.println("Escalao de equipa diferente de competiçao");
+			//}
 		}
 		
 		public void removeEquipa(Equipa equipa) {
@@ -72,9 +76,14 @@ import java.util.ArrayList;
 			this.jogos = jogos;
 		}
 		public void addJogo(Jogo Jogo) {
+			//if ((validarEquipasDiff(Jogo)==true)&&(validarEquipasComp(Jogo)==true)) {
 			this.jogos.add(Jogo);
+			}
+	//	}
+		public void removeJogo(Jogo Jogo) {
+			this.jogos.remove(Jogo);
 		}
-
+		
 		public String getEscalao() {
 			return escalao;
 		}
@@ -113,38 +122,36 @@ import java.util.ArrayList;
 	    // =======================================================
 
          public void eliminarEquipa(int codigo) {
-        	 
         	 for (int i = 0; i < equipas.size(); i++) {
         		if(codigo == this.equipas.get(i).getCodigoEquipa()) {
         			equipas.remove(i);
         			System.out.println("equipa removida");
         		}
-        		
-        	 }
- 
-        	 
+        	 } 
          }
          
          public void AlterarEquipa(int codigo, Equipa equipa) {
         	 for (int i = 0; i < equipas.size(); i++) {
                    eliminarEquipa(codigo);
                    addEquipa(equipa);
-             
               }
          }	 
          
          public void eliminarJogo(int codigo) {
-        	 
         	 for (int i = 0; i < jogos.size(); i++) {
         		if(codigo == this.jogos.get(i).getJornada()) {
         			jogos.remove(i);
         			System.out.println("jogo removido");
-        		}
-        		
+        		}	
         	 }
- 
-        	 
          }
+         
+         public void AlterarJogo(int codigo, Jogo Jogo) {
+        	 for (int i = 0; i < equipas.size(); i++) {
+                   eliminarJogo(codigo);
+                   addJogo(Jogo);
+              }
+         }	
          
          public void mostrarequipas() {
              System.out.println("Equipas:");
@@ -162,9 +169,40 @@ import java.util.ArrayList;
              } 
          }
         
+ /*        public boolean validarEscalao(Equipa equipa) {
+			boolean val=false;
+        	 if (equipa.getEscalao().equals(this.getEscalao())) {
+        		 val=true;
+        	 }
+        	 return val;
+         }
+         public boolean validarEquipasComp(Jogo Jogo) {
+        	 boolean team1=false;
+        	 boolean team2=false;
+        	 boolean val=false;
+        	 for (int i = 0; i < equipas.size(); i++) {
+        		if(equipas.get(i).getCodigoEquipa()==Jogo.getEquipaVisitada().getCodigoEquipa()) {
+        			team1=true;
+        		}
+        		if(equipas.get(i).getCodigoEquipa()==Jogo.getEquipaVisitante().getCodigoEquipa()) {
+        			team2=true;
+        		}
+			}
+        	 if ((team1 == true)&&(team2 == true)) {
+        		 val=true;
+        	 }
+        	 return val;
+         }
          
+         public boolean validarEquipasDiff(Jogo Jogo) {
+        	 boolean val=false;
+        	 if (Jogo.getEquipaVisitada().getCodigoEquipa() != Jogo.getEquipaVisitante().getCodigoEquipa()) {
+        		 val=true;
+        	 }
+        	 return val;
+         }
          
-
+*/
 	    // =======================================================
 	    // ============== MÉTODOS COMPLEMENTARES ==============
 	    // =======================================================

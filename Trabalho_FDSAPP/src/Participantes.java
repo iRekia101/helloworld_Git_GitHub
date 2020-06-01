@@ -54,12 +54,18 @@ public abstract class Participantes {
   
    
     // CONSTRUTOR DEFAULT
-
-   
+	    public Participantes() {
+		}
 
     // CONSTRUTOR COM PARÂMETROS
 
-
+		public Participantes(int id, String nome, LocalDate dataNascimento, int contacto, String email) {
+			this.id = id;
+			this.nome = nome;
+			this.dataNascimento = dataNascimento;
+			this.contacto = contacto;
+			this.email = email;
+		}
 
     // =======================================================
     // =================== .COMPORTAMENTOS ==================
@@ -67,17 +73,18 @@ public abstract class Participantes {
 
 
 
-
     // =======================================================
     // ============== MÉTODOS COMPLEMENTARES ==============
     // =======================================================
+		
 
-    // ----> toString()
+		// ----> toString()
 		@Override
 		public String toString() {
-			return "Participantes [id=" + id + ", nome=" + nome + ", dataNascimento=" + dataNascimento + ", contacto="
-					+ contacto + ", email=" + email + "]";
+			return "\n id=" + id + "\n nome=" + nome + "\n dataNascimento=" + dataNascimento + "\n contacto="
+					+ contacto + "\n email=" + email + "";
 		}
+
 
 
 

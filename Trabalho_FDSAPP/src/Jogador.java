@@ -1,5 +1,8 @@
+import java.time.LocalDate;
 
-	public class Jogador extends Participantes {
+import javax.swing.JOptionPane;
+
+public class Jogador extends Participantes {
 	    // =======================================================
 	    // ===================== ATRIBUTOS =======================
 	    // =======================================================
@@ -35,7 +38,8 @@
 	   
 	    // CONSTRUTOR DEFAULT
            public Jogador () {
-        	   
+        	   super();
+        	   //makeJogador()
            }
 	   
 
@@ -52,18 +56,28 @@
 	    // =================== .COMPORTAMENTOS ==================
 	    // =======================================================
 
-
-
+	//	public void makeJogador() {	
+		//	setId(Integer.parseInt(JOptionPane.showInputDialog("ID:")));
+		//	setNome(JOptionPane.showInputDialog("nome:"));
+		//	setContacto(Integer.parseInt(JOptionPane.showInputDialog("contacto:")));
+		//	setEmail(JOptionPane.showInputDialog("email:"));
+		//	int dia = Integer.parseInt(JOptionPane.showInputDialog("Data de Nascimento dia:"));
+		//	int mes = Integer.parseInt(JOptionPane.showInputDialog("Data de Nascimento mes:"));
+		//	int ano = Integer.parseInt(JOptionPane.showInputDialog("Data de Nascimento ano:"));
+		//	setDataNascimento(LocalDate.of(ano, mes, dia));
+	//		setPosicao(JOptionPane.showInputDialog("Posicao:"));
+//			setPePreferido(JOptionPane.showInputDialog("Pe preferido:"));
+//		}
+		
 
 	    // =======================================================
 	    // ============== MÉTODOS COMPLEMENTARES ==============
 	    // =======================================================
 
 	    // ----> toString()
-		
 		@Override
 		public String toString() {
-			return "Jogadores [ posicao=" + posicao + ", pePreferido=" + pePreferido + "]";
+			return "\n Jogador :" + super.toString() +" \n posicao= "+ posicao + "\n pePreferido= "+ pePreferido;
 		}
 
 	    // ----> equals()

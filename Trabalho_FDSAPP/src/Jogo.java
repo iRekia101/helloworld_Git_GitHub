@@ -6,9 +6,9 @@ import java.util.List;
 	    // =======================================================
 	    // ===================== ATRIBUTOS =======================
 	    // =======================================================
-	      private String equipaVisitante;
+	      private Equipa equipaVisitante;
 	      private int golosEquipaVisitante;
-	      private String equipaVisitada;
+	      private Equipa equipaVisitada;
 	      private int golosEquipaVisitada;
 	      private LocalDate data;
 	      private int jornada;
@@ -23,11 +23,10 @@ import java.util.List;
 	      
 
 	 
-		public String getEquipaVisitante() {
+		public Equipa getEquipaVisitante() {
 	  		return equipaVisitante;
 	  	}
-	 
-		public void setEquipaVisitante(String equipaVisitante) {
+		public void setEquipaVisitante(Equipa equipaVisitante) {
 	  		this.equipaVisitante = equipaVisitante;
 	  	}
 	  	public int getGolosEquipaVisitante() {
@@ -36,12 +35,13 @@ import java.util.List;
 	  	public void setGolosEquipaVisitante(int golosEquipaVisitante) {
 	  		this.golosEquipaVisitante = golosEquipaVisitante;
 	  	}
-	  	public String getEquipaVisitada() {
+	  	public Equipa getEquipaVisitada() {
 	  		return equipaVisitada;
 	  	}
-	  	public void setEquipaVisitada(String equipaVisitada) {
+	  	public void setEquipaVisitada(Equipa equipaVisitada) {
 	  		this.equipaVisitada = equipaVisitada;
 	  	}
+
 	  	public int getGolosEquipaVisitada() {
 	  		return golosEquipaVisitada;
 	  	}
@@ -86,7 +86,7 @@ import java.util.List;
 	   }
 
 	    // CONSTRUTOR COM PARÂMETROS
-	 	public Jogo(String equipaVisitante, int golosEquipaVisitante, String equipaVisitada, int golosEquipaVisitada,
+	 	public Jogo(Equipa equipaVisitante, int golosEquipaVisitante, Equipa equipaVisitada, int golosEquipaVisitada,
 				LocalDate data, int jornada) {
 			super();
 			this.equipaVisitante = equipaVisitante;
@@ -103,8 +103,43 @@ import java.util.List;
 	    // =======================================================
 	    // =================== .COMPORTAMENTOS ==================
 	    // =======================================================
-
-
+	 	 public void eliminarArbitro(int id) {
+        	 for (int i = 0; i < arbitros.size(); i++) {
+        		if(id == this.arbitros.get(i).getId()) {
+        			arbitros.remove(i);
+        			System.out.println("Arbitro removido");
+        		}
+        	 } 
+         }
+	 	 public void AlterarArbitro(int id,Arbitro Arbitro) {
+       	      for (int i = 0; i < arbitros.size(); i++) {
+                  eliminarArbitro(id);
+                  addArbitro(Arbitro);
+             }
+        }
+          
+	 	 public void AdicionarGolo(int id)  {
+	 		 if(id == equipaVisitante.getCodigoEquipa()) {
+	 			golosEquipaVisitante ++;
+	 		 }else if (id == equipaVisitada.getCodigoEquipa()) {
+	 			 golosEquipaVisitada ++;
+	 		 }else {
+	 			 System.out.println("O id esta incorreto");
+	 		 }
+	 			 
+	 	 }
+	 	 
+	 	 public void RemoverGolo(int id)  {
+	 		 if(id == equipaVisitante.getCodigoEquipa()) {
+	 			golosEquipaVisitante --;
+	 		 }else if (id == equipaVisitada.getCodigoEquipa()) {
+	 			 golosEquipaVisitada --;
+	 		 }else {
+	 			 System.out.println("O id esta incorreto");
+	 		 }
+	 			 
+	 	 }
+	 	 
 
 
 	    // =======================================================

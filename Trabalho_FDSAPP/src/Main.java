@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 
 public class Main {
 
@@ -6,65 +7,60 @@ public static void main(String[] args) {
 		Competicao Competicoes = new Competicao();
 	    Competicoes.setCodigo(15);
 	    Competicoes.setNome("1liga");
+	    Competicoes.setEscalao("Iniciado");
 	    
 	    
-	    Equipa Equipa = new Equipa();
-	    Equipa.setNomeEquipa("Porto");
-	    Equipa.setCodigoEquipa(12345);
+	    Equipa Equipa = new Equipa(12345,"Porto","Iniciado");
+	    Equipa Equipa2 = new Equipa (23456,"Benfica","Iniciado");
+	    Equipa Equipa3 = new Equipa (23453,"Guimaraes","Iniciado");
+	    
+	    Jogador jogador1 = new Jogador();
+	    Treinador treinador1 = new Treinador (); 
+	    
+	    Equipa.addJogador(jogador1);
+	    Equipa.addTreinador(treinador1);
+	    
 	    
 	    Competicoes.addEquipa(Equipa);
-	   // System.out.println(Equipa.getNomeEquipa());
-	   // System.out.println(Equipa.getCodigoEquipa());
-	    
-	    Equipa Equipa2 = new Equipa ();
-	    Equipa2.setNomeEquipa("Benfica");
-	    Equipa2.setCodigoEquipa(23456);
-	    
 	    Competicoes.addEquipa(Equipa2);
+	    Competicoes.addEquipa(Equipa3);
+	    
+	   
+	    Arbitro Arbitro = new Arbitro();
+		Arbitro.setNome("Miguel");
+		Arbitro.setId(12345);
+		Arbitro.setContacto(910457382);
+		Arbitro.setEmail("adfjdgs@hotmail.com");
+		Arbitro.setDataNascimento(LocalDate.of(1998,03,28));
 	    
 	    
-	   Jogo jogo1 = new Jogo();
-	   jogo1.setJornada(15);
-	   jogo1.setEquipaVisitada("Sporting");
-	   jogo1.setEquipaVisitante("Braga");
-	   jogo1.setGolosEquipaVisitada(1);
-	   jogo1.setGolosEquipaVisitante(3);
+	   Jogo jogo1 = new Jogo(Equipa2,3,Equipa,1,LocalDate.of(2010, 10, 26),15);
+	   //jogo1.setJornada(15);
+	   //jogo1.setEquipaVisitada(Equipa);
+	   //jogo1.setEquipaVisitante(Equipa2);
+	   //jogo1.setGolosEquipaVisitada(1);
+	   //jogo1.setGolosEquipaVisitante(3);
+	   jogo1.addArbitro(Arbitro);
 	   
-	   Competicoes.addJogo(jogo1);
+	   Jogo jogo2 = new Jogo(Equipa3, 2,Equipa,2,LocalDate.of(2010,11,20),16);
+	   //jogo2.setEquipaVisitada(Equipa);
+	   //jogo2.setEquipaVisitante(Equipa3);
+	   //jogo2.setGolosEquipaVisitada(2);
+	   //jogo2.setGolosEquipaVisitante(2);
+	   jogo2.addArbitro(Arbitro);
+	   jogo2.AdicionarGolo(23453);
 	   
+	   System.out.println(jogo2.getGolosEquipaVisitante());
 	   
-	   
-	   Arbitro Arbitro = new Arbitro();
-	   Arbitro.setNome("Miguel");
-	   Arbitro.setId(12345);
-	   Arbitro.setContacto(910457382);
-	   Arbitro.setEmail("adfjdgs@hotmail.com");
-	// Arbitro.setDataNascimento("12/03/1998");
+	   Competicoes.addJogo(jogo1);	    
 	  
-	    
-	   
-	   Jogo jogo2 = new Jogo();
-	   jogo2.setEquipaVisitada("Belenenses");
-	   jogo2.setEquipaVisitante("Guimaraes");
-	   jogo2.setGolosEquipaVisitada(2);
-	   jogo2.setGolosEquipaVisitante(2);
-	   
-	  jogo2.addArbitro(Arbitro);
-	   
 	   System.out.println(jogo2.getArbitros());
+	
 	   
 	  // System.out.println(Competicoes.getJogos());
-	   
-	   
- 
-		Equipa Equipa3 = new Equipa();
-		
+
 		Clube Clube1 = new Clube();
-		
-		Equipa3.setNomeEquipa("guimaraes");
-		Equipa3.setCodigoEquipa(7890);
-		
-		
+	
 		Clube1.addEquipa(Equipa3);
 		
 		System.out.println(Clube1.getEquipas());
@@ -77,9 +73,10 @@ public static void main(String[] args) {
 		Treinador.setId(1234);
 		Treinador.setContacto(925014872);
 		Treinador.setEmail("Jacinto@hotmail.com");
-		
+	
 		
 		Jogador Jogador = new Jogador();
+		
 		
 		
 		Jogador.setNome("Ronaldo");
@@ -88,7 +85,7 @@ public static void main(String[] args) {
 		Jogador.setEmail("Ronaldo@hotmail.com");
 		Jogador.setPePreferido("Direito");
 		Jogador.setPosicao("Avancado");
-		
+		 System.out.println(Treinador);
 		
 		
 		
